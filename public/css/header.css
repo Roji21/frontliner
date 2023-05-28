@@ -138,6 +138,7 @@ header {
     background-color: #D9D9D9;
     background-clip: border-box;
     border-radius: 0.5rem;
+    border-color: #D9D9D9;
 }
 
 .card-title {
@@ -292,9 +293,13 @@ header .heroe h1 {
     font-size: 1.5em;
     font-weight: 400;
 }
+
 .containera span {
     padding-left: 4mm;
     padding-right: 4mm;
+}
+.containera .card-body {
+    margin-bottom: 2cm;
 }
 
 .containerb {

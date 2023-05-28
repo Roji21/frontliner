@@ -60,13 +60,6 @@
                 <div class="col">
                     <a href="https://www.youtube.com" style="text-decoration:none">
                         <div class="card" style="width: 18rem;">
-<!--                             
-                            $rand = array('0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f');
-                            $color1 = '#' . $rand[rand(0, 15)] . $rand[rand(0, 15)] . $rand[rand(0, 15)] . $rand[rand(0, 15)] . $rand[rand(0, 15)] . $rand[rand(0, 15)];
-                            $color2 = '#' . $rand[rand(0, 15)] . $rand[rand(0, 15)] . $rand[rand(0, 15)] . $rand[rand(0, 15)] . $rand[rand(0, 15)] . $rand[rand(0, 15)];
-                            $color3 = '#' . $rand[rand(0, 15)] . $rand[rand(0, 15)] . $rand[rand(0, 15)] . $rand[rand(0, 15)] . $rand[rand(0, 15)] . $rand[rand(0, 15)]; -->
-                            <!-- style="background: php echo $color1; ;" -->
-
                             <div class="card-body1" >
                                 <h5 class="card-title center">Discuss</h5>
                                 <img src="<?= base_url('img/disqus.png') ?>" class="card-img-top" alt="...">
@@ -112,6 +105,7 @@
                     </a>
                 </div>
             </div>
+            
         </div>
 
     </section>

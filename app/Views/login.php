@@ -29,16 +29,16 @@
                 <div class="col-md-6">
                     <div class="card px-5 py-5" id="form1">
                         <h5 class="card-title center">Sign In To Your Acount</h5>
-                        <form action="/">
+                        <form action="/auth/login" method="post">
                             <p>Email</p>
                             <div class="input-group mb-4 ">
                                 <input type="text" class="form-control border-warning  p-2" placeholder="Email"
-                                    aria-label="Email">
+                                    aria-label="Email"name="username">
                             </div>
                             <p>Password</p>
                             <div class="input-group mb-4 ">
                                 <input type="password" class="form-control border-warning  p-2" placeholder="Password"
-                                    aria-label="password">
+                                    aria-label="password"name="password">
                             </div>
                             <div class="mb-3"> <button v-on:click.stop.prevent="submit"
                                     class="btn btn-warning w-100">Login</button> </div>
@@ -53,7 +53,6 @@
                                         <p>Create New Acount</p>
                                     </a>
                                 </div>
-
                             </div>
                         </form>
                     </div>

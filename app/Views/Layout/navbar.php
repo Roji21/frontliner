@@ -22,6 +22,10 @@
 		<li class="nav-item">
           <a class="nav-link <?php if($method=="faq"){echo "active";}?>" aria-current="page" href="<?= base_url('faq') ?>">Faqs</a>
         </li>
+        <li class="user-profile">
+            <img src="<?php echo base_url("img/expert/mentor0.png"); ?>" alt="User Photo">
+            <span><?php echo $username; ?></span>
+        </li>
       </ul>
       <form class="d-flex">
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">

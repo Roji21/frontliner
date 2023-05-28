@@ -46,19 +46,47 @@
         <section>
             <div class="row">
                 <?php
-                for ($x = 0; $x <= 2; $x++) {
-                    $color1 = '#' . $rand[rand(0, 1)];
-                    echo "<div class='col'>";
-                    echo "<a href='/ask' style='text-decoration:none'>";
-                    echo "<div class='card' style='width: 18rem;''>";
-                    echo "<div class='card-body' style='background:" . $color1 . ";' >";
-                    echo "<img src=" . base_url("img/expert/mentor" . $x . ".png") . " class='card-img-top'>";
-                    echo "<h5 class='card-title'  style='color: black;'>Asked The Expert</h5>";
-                    echo "<span  style='color: black;'>Phyton,Java</span>";
-                    echo "</div>";
-                    echo "</div>";
-                    echo "</a>";
-                    echo "</div>";
+                for ($x = 0; $x <= 4; $x++) {
+                    if ($x == 0) {
+                        $color1 = '#' . $rand[0];
+                        echo "<div class='col ;>";
+                        echo "<a href='/ask' style='text-decoration:none'>";
+                        echo "<div class='card' style='width: 18rem;'>";
+                        echo "<div class='card-body' style='background:" . $color1 . ";' >";
+                        echo "<img src=" . base_url("img/expert/mentor" . $x . ".png") . " class='card-img-top'>";
+                        echo "<h5 class='card-title'  style='color: black;'>Asked The Expert</h5>";
+                        echo "<span  style='color: black;'>Phyton,Java</span>";
+                        echo "</div>";
+                        echo "</div>";
+                        echo "</a>";
+                        echo "</div>";
+                    } elseif ($x % 2 == 0) {
+                        $color1 = '#' . $rand[0];
+                        echo "<div class='col'>";
+                        echo "<a href='/ask' style='text-decoration:none'>";
+                        echo "<div class='card' style='width: 18rem;''>";
+                        echo "<div class='card-body' style='background:" . $color1 . ";' >";
+                        echo "<img src=" . base_url("img/expert/mentor0.png") . " class='card-img-top'>";
+                        echo "<h5 class='card-title'  style='color: black;'>Asked The Expert</h5>";
+                        echo "<span  style='color: black;'>Phyton,Java</span>";
+                        echo "</div>";
+                        echo "</div>";
+                        echo "</a>";
+                        echo "</div>";
+                    } else{
+                        $color1 = '#' . $rand[1];
+                        echo "<div class='col'>";
+                        echo "<a href='/ask' style='text-decoration:none'>";
+                        echo "<div class='card' style='width: 18rem;''>";
+                        echo "<div class='card-body' style='background:" . $color1 . ";' >";
+                        echo "<img src=" . base_url("img/expert/mentor0.png") . " class='card-img-top'>";
+                        echo "<h5 class='card-title'  style='color: black;'>Asked The Expert</h5>";
+                        echo "<span  style='color: black;'>Phyton,Java</span>";
+                        echo "</div>";
+                        echo "</div>";
+                        echo "</a>";
+                        echo "</div>";
+                    }
                 }
                 ?>
         </section>

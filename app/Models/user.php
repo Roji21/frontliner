@@ -22,4 +22,9 @@ class user extends Model
         $builder = $this->db->table($this->table);
         return $builder->insert($data);
     }
+    public function emwhere($data)
+    {
+        return $this->getWhere(['email' => $data]);
+    }
+    
 }
