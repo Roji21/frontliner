@@ -2,20 +2,52 @@
 
 namespace App\Controllers;
 
+use CodeIgniter\Session\Session;
+
 use CodeIgniter\Controller;
 use App\Models\user;
 
 class login extends BaseController
 {
+    protected $session;
     public function index()
     {
-        $data['title'] = 'Log In';
-        echo view("login", $data);
+        $session = session();
+        if (!$session->has('id')) {
+            
+            $data = [
+                'title' => 'Log In'
+            ];
+            echo view("login", $data);
+        } else {
+            $namaPengguna = $session->get('id');
+            $userModel = new user();
+            $user = $userModel->getUserById($namaPengguna);
+            $data = [
+                'nama' => $user['nama'],
+                'title' => 'Log In'
+            ];
+            echo view("login", $data);
+        }
     }
     public function index2()
     {
-        $data['title'] = 'Sign Up';
-        echo view("create", $data);
+        $session = session();
+        if (!$session->has('id')) {
+            $data = [
+                'title' => 'Sign Up'
+            ];
+            echo view("create", $data);
+        } else {
+            $namaPengguna = $session->get('id');
+            $userModel = new user();
+            $user = $userModel->getUserById($namaPengguna);
+            $data = [
+                'nama' => $user['nama'],
+                'title' => 'Sign Up'
+            ];
+            echo view("create", $data);
+        }
     }
     public function add()
     {
@@ -35,49 +67,24 @@ class login extends BaseController
     }
     public function login()
     {
-        // Proses login
-        $data['title'] = 'Log In';
-        echo view("login", $data);
-        // Validasi input
-        $validationRules = [
-            'username' => 'required',
-            'password' => 'required'
-        ];
+        // $validationRules = [
+        //     'email' => 'required|valid_email',
+        //     'password' => 'required'
+        // ];
 
-        if ($this->validate($validationRules)) {
-            // Ambil data input
-            $username = $this->request->getPost('username');
-            $password = $this->request->getPost('password');
-
-            // Query ke database untuk mencocokkan username dan password
-            $userModel = new user();
-            $user = $userModel->emwhere($username)->first();
-
-            if ($user && password_verify($password, $user['password'])) {
-                // Login berhasil, simpan informasi pengguna ke dalam session
-                echo '<script>
-                    alert("Username atau password salah.");
-                </script>';
-                $session = session();
-                $session->set([
-                    'user_id' => $user['id'],
-                    'username' => $user['email'],
-                    // Informasi lain yang dibutuhkan
-                ]);
-                
-                return redirect()->to('/');
-            } else {
-                echo '<script>
-                    alert("Username atau password salah.");
-                </script>';
-                
-                return view('/login', $data);
-            }
+        $email = $this->request->getPost('email');
+        $password = $this->request->getPost('password');
+        $userModel = new user();
+        $user = $userModel->getUserByEmail($email);
+        if ($user['email'] == $email && $user['password'] == $password) {
+            // Login berhasil, simpan informasi pengguna ke dalam session
+            $session = session();
+            $session->set('id', $user['id_user']);
+            return redirect()->to(base_url('/'));
         } else {
-            // Tampilkan form login
-            return view('/');
+            $data['error'] = 'Email atau password salah.';
+            return redirect()->to(base_url('/login'));
         }
-
     }
     public function logout()
     {
@@ -85,7 +92,7 @@ class login extends BaseController
         $session = session();
         $session->destroy();
 
-        return redirect()->to('/login');
+        return redirect()->to(base_url('/'));
     }
 
 }

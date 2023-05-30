@@ -6,10 +6,10 @@ use CodeIgniter\Model;
 
 class UserModel extends Model
 {
-    protected $table         = 'user';
+    // protected $table         = 'user';
     protected $primaryKey    = 'id_user';
     protected $returnType    = 'object';
-    protected $allowedFields = ['username', 'password'];
+    // protected $allowedFields = ['username', 'password'];
     protected $useTimestamps = true;
 
     // Dates
@@ -34,4 +34,6 @@ class UserModel extends Model
     protected $afterFind      = [];
     protected $beforeDelete   = [];
     protected $afterDelete    = [];
+
+
 }

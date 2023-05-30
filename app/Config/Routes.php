@@ -38,6 +38,10 @@ $routes->get('/ask', 'ask::index');
 $routes->get('/coba', 'ask::index2');
 $routes->post('/auth/login', 'login::login');
 $routes->get('/logout', 'login::logout');
+// $routes->get('/login', 'AuthController::login');
+// $routes->post('/auth/login', 'AuthController::login');
+// $routes->get('/logout', 'AuthController::logout');
+
 
 /*
  * --------------------------------------------------------------------

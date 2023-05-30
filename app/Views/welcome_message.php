@@ -16,6 +16,7 @@
 
 <body>
     <header>
+    <?= $this->include('layout/header') ?>
 
         <div class="heroe">
 
@@ -163,6 +164,9 @@
     </div>
 
     <!-- FOOTER: DEBUG INFO + COPYRIGHTS -->
+    <footer>
+    <?= $this->include('Layout/footer') ?>
+    </footer>
 
 
 

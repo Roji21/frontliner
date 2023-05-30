@@ -22,9 +22,15 @@ class user extends Model
         $builder = $this->db->table($this->table);
         return $builder->insert($data);
     }
-    public function emwhere($data)
+    protected $primaryKey = 'id_user'; // Primary key tabel pengguna
+    protected $allowedFields = ['email', 'password', 'name']; // Kolom yang dapat diisi pada tabel pengguna
+
+    public function getUserByEmail($email)
     {
-        return $this->getWhere(['email' => $data]);
+        return $this->where('email', $email)->first();
     }
-    
+    public function getUserById($id)
+    {
+        return $this->where('id_user', $id)->first();
+    }
 }

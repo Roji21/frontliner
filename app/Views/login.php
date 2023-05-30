@@ -22,7 +22,7 @@
 </head>
 
 <body>
-    <?= $this->include('Layout/header') ?>
+    <?= $this->include('layout/header') ?>
     <section>
         <div class="containerb mt-5">
             <div class="row d-flex justify-content-center">
@@ -33,7 +33,7 @@
                             <p>Email</p>
                             <div class="input-group mb-4 ">
                                 <input type="text" class="form-control border-warning  p-2" placeholder="Email"
-                                    aria-label="Email"name="username">
+                                    aria-label="Email"name="email">
                             </div>
                             <p>Password</p>
                             <div class="input-group mb-4 ">

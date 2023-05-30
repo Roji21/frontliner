@@ -2,14 +2,33 @@
 
 namespace App\Controllers;
 
+
+use CodeIgniter\Session\Session;
+use App\Models\user;
+
 class Home extends BaseController
 {
+    protected $session;
     public function index()
     {
-        $data['title']   = 'Home';
-        echo view("Layout/header");
-        echo view("welcome_message",$data);
-        echo view("Layout/footer");
+        $session = session();
+        if (!$session->has('id')) {
+            $data = [
+                'title' => "Home"
+            ];
+            echo view("welcome_message", $data);
+        } else {
+            $session = session();
+            $namaPengguna = $session->get('id');
+            $userModel = new user();
+            $user = $userModel->getUserById($namaPengguna);
+            $data = [
+                'nama' => $user['nama'],
+                'title' => "Home"
+            ];
+            echo view("welcome_message", $data);
+        }
+
     }
-    
+
 }
