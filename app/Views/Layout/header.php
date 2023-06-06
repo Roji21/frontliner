@@ -27,8 +27,6 @@
             <li class="menu-item hidden"><a href="/about">About us</a></li>
             <li class="menu-item hidden"><a href="/service">Our Service</a>
             </li>
-
-            <li class="menu-item hidden"><a href="/login">Log in</a></li>
             <?php
             if (isset($nama)) {
               echo '<li class="menu-item hidden">';
@@ -39,6 +37,8 @@
               echo '</div>';
               echo '</a>';
               echo '</li>';
+            }else {
+              echo '<li class="menu-item hidden"><a href="/login">Log in</a></li>';
             }
             ?>
           </ul>
