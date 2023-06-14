@@ -98,7 +98,9 @@ header {
     /* margin-bottom: 1mm; */
 }
 header li.menu-item img {
+    
     margin-left: 3mm;
+    margin-bottom: 2mm;
     height: 10mm;
     width: 10mm;
     border-radius: 100%;
@@ -236,7 +238,7 @@ header li.menu-item a {
 
 header li.menu-item a:hover,
 header li.menu-item a:focus {
-    background-color: rgba(221, 72, 20, .2);
+    /* background-color: #5ceedd; */
     color: rgba(221, 72, 20, 1);
 }
 
@@ -286,6 +288,12 @@ header .heroe h1 {
     font-size: 4rem;
     font-weight: 800;
     font-style: italic;
+}
+.containera h1 {
+    font-size: 4rem;
+    font-weight: 800;
+    font-style: italic;
+    text-align: center;
 }
 
 .containera h5 {
