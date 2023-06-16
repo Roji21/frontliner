@@ -16,10 +16,15 @@
 <body>
     <?= $this->include('layout/header') ?>
     <section>
-
-        <div class="containera"style="padding-top: 1cm;">
-            <?= esc($isi['Nama'])?>
-            <img src="<?= base_url('img/expert/'.$isi['foto'].'.png') ?>" alt="">
+        <div class="containera" style="padding-top: 1cm;">
+            <div class="row">
+                <div class="col1" style='width:3px;'>
+                    <img src="<?= base_url('img/expert/' . $isi['foto'] . '.png') ?>" alt="">
+                </div>
+                <div class="col2">
+                    <?= esc($isi['Nama']) ?>
+                </div>
+            </div>
         </div>
     </section>
 

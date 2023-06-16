@@ -23,7 +23,8 @@
         <div class="input-group mb-3 ">
             <div class="custom-select" style="width:200px;">
                 <select>
-                    <option value="0">Pilih Kategori:</option>
+                    <option value="">Pilih Kategori:</option>
+                    <option value="0">All</option>
                     <option value="1">Java</option>
                     <option value="2">Phyton</option>
                     <option value="3">Laravel</option>
@@ -33,7 +34,7 @@
                     <option value="4">Acounting</option>
                     <option value="5">Administration</option>
                 </select>
-                <script src="<?= base_url('drop.js') ?>"></script>
+                <script src="<?= base_url('droplink.js') ?>"></script>
             </div>
         </div>
 
@@ -55,9 +56,9 @@
                         echo "<a href='/ask/expert/".$value['slug'] ."' style='text-decoration:none'>";
                         echo "<div class='card' style='width: 18rem;''>";
                         echo "<div class='card-body' style='background:" . $color1 . ";' >";
-                        echo "<img src=" . base_url("img/expert/mentor0.png") . " class='card-img-top'>";
-                        echo "<h5 class='card-title'  style='color: black;'>Asked The Expert</h5>";
-                        echo "<span  style='color: black;'>Phyton,Java</span>";
+                        echo "<img src=" . base_url("img/expert/".$value['foto'].".png") . " class='card-img-top'>";
+                        echo "<h5 class='card-title'  style='color: black;'>".$value['Nama']."</h5>";
+                        echo "<span  style='color: black;'>".$value['skill']."</span>";
                         echo "</div>";
                         echo "</div>";
                         echo "</a>";
@@ -68,9 +69,9 @@
                         echo "<a href='/ask/expert/".$value['slug'] ."' style='text-decoration:none'>";
                         echo "<div class='card' style='width: 18rem;''>";
                         echo "<div class='card-body' style='background:" . $color1 . ";' >";
-                        echo "<img src=" . base_url("img/expert/mentor0.png") . " class='card-img-top'>";
-                        echo "<h5 class='card-title'  style='color: black;'>Asked The Expert</h5>";
-                        echo "<span  style='color: black;'>Phyton,Java</span>";
+                        echo "<img src=" . base_url("img/expert/".$value['foto'].".png") . " class='card-img-top'>";
+                        echo "<h5 class='card-title'  style='color: black;'>".$value['Nama']."</h5>";
+                        echo "<span  style='color: black;'>".$value['skill']."</span>";
                         echo "</div>";
                         echo "</div>";
                         echo "</a>";

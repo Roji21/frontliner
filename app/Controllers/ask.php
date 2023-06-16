@@ -49,7 +49,7 @@ class ask extends BaseController
         } else {
             $namaPengguna = $session->get('id');
             $userModel = new user();
-            $user = $userModel->getUserByslug($namaPengguna);
+            $user = $userModel->getUserById($namaPengguna);
             $data = [
                 'nama' => $user['nama'],
                 'title' => 'Ask Expert',

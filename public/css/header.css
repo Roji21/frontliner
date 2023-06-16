@@ -98,13 +98,13 @@ header {
     /* margin-bottom: 1mm; */
 }
 header li.menu-item img {
-    
     margin-left: 3mm;
     margin-bottom: 2mm;
-    height: 10mm;
-    width: 10mm;
+    height: 11mm;
+    width: 11mm;
     border-radius: 100%;
 }
+
 
 .col {
     flex: 1 0 0%;
@@ -226,10 +226,11 @@ header li a {
 }
 
 header li.menu-item a {
-    border-radius: 5px;
-    margin: 5px 0;
-    height: 38px;
-    line-height: 36px;
+    font-size: 20px;
+    font-weight: 450;
+    margin: 6px 0;
+    height: 50px;
+    line-height: 40px;
     padding: .4rem .65rem;
     text-align: center;
     padding-left: 0.8cm;
@@ -244,8 +245,7 @@ header li.menu-item a:focus {
 
 header .logo {
     float: left;
-    height: 44px;
-    padding: .4rem .5rem;
+    height: 65px;
     padding-left: 1cm;
 }
 
@@ -275,6 +275,16 @@ header .menu-toggle button:hover,
 header .menu-toggle button:focus {
     background-color: rgba(221, 72, 20, .8);
     color: rgba(255, 255, 255, .8);
+}
+.col1 {
+    flex: 1 0 35%;
+}
+.col1 img {
+    height: 300px;
+    width: 300px;
+}
+.col2 {
+    flex: 1 0 65%;
 }
 
 header .heroe {
