@@ -7,6 +7,7 @@ use CodeIgniter\Model;
 class user extends Model
 {
     protected $table = 'user';
+    
 
     public function getuser($id = false)
     {

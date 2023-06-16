@@ -41,17 +41,18 @@
     
     <?php
     $rand = array('00E0D3', 'F799DD');
+    $x =0;
     ?>
     <div class="containera" style="background:#D9D9D9;">
         <section>
             <h1>It'Our Expert</h1>
             <div class="row">
-                <?php
-                for ($x = 0; $x <= 5; $x++) {
+                <?php foreach($isi as $key => $value):
+                    
                     if ($x % 2 == 0) {
                         $color1 = '#' . $rand[0];
                         echo "<div class='col'>";
-                        echo "<a href='/ask' style='text-decoration:none'>";
+                        echo "<a href='/ask/expert/".$value['slug'] ."' style='text-decoration:none'>";
                         echo "<div class='card' style='width: 18rem;''>";
                         echo "<div class='card-body' style='background:" . $color1 . ";' >";
                         echo "<img src=" . base_url("img/expert/mentor0.png") . " class='card-img-top'>";
@@ -64,7 +65,7 @@
                     } else{
                         $color1 = '#' . $rand[1];
                         echo "<div class='col'>";
-                        echo "<a href='/ask' style='text-decoration:none'>";
+                        echo "<a href='/ask/expert/".$value['slug'] ."' style='text-decoration:none'>";
                         echo "<div class='card' style='width: 18rem;''>";
                         echo "<div class='card-body' style='background:" . $color1 . ";' >";
                         echo "<img src=" . base_url("img/expert/mentor0.png") . " class='card-img-top'>";
@@ -75,8 +76,8 @@
                         echo "</a>";
                         echo "</div>";
                     }
-                }
-                ?>
+                    $x++;
+                endforeach; ?>
         </section>
 
     </div>
