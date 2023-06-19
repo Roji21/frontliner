@@ -23,10 +23,10 @@ class Home extends BaseController
             $userModel = new user();
             $user = $userModel->getUserById($namaPengguna);
             $data = [
-                'nama' => $user['nama'],
+                'user' => $user,
                 'title' => "Home"
             ];
-            echo view("welcome_message", $data);
+            echo view("home", $data);
         }
 
     }

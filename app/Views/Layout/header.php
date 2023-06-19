@@ -23,12 +23,12 @@
             <li class="menu-item hidden"><a href="/service">Our Service</a>
             </li>
             <?php
-            if (isset($nama)) {
+            if (isset($user)) {
               echo '<li class="menu-item hidden">';
               echo '<a href="/logout">';
               echo '<div class="user">';
-              echo "<span>". $nama."</span>";
-              echo "<img src=" . base_url("img/expert/mentor0.png") . ">";
+              echo "<span>". $user['nama']."</span>";
+              echo "<img src=" . base_url("img/expert/". $user['foto'].".png") . ">";
               echo '</div>';
               echo '</a>';
               echo '</li>';

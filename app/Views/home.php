@@ -16,7 +16,7 @@
 
 <body>
     <header>
-    <?= $this->include('layout/header') ?>
+        <?= $this->include('layout/header') ?>
 
         <div class="heroe">
 
@@ -61,13 +61,13 @@
                 <div class="col">
                     <a href="https://www.youtube.com" style="text-decoration:none">
                         <div class="card" style="width: 18rem;">
-                            <div class="card-body1" >
+                            <div class="card-body1">
                                 <h5 class="card-title center">Discuss</h5>
                                 <img src="<?= base_url('img/disqus.png') ?>" class="card-img-top" alt="...">
                             </div>
                             <div class="card-text">
                                 <p>
-                                    a
+                                    Your Idea is a insight Drop yout insight here
                                 </p>
                             </div>
                         </div>
@@ -76,10 +76,9 @@
                 <div class="col">
                     <a href="/ask" style="text-decoration:none">
                         <div class="card" style="width: 18rem;">
-                            <div class="card-body2" >
+                            <div class="card-body2">
                                 <h5 class="card-title">Asked The Expert</h5>
                                 <img src="<?= base_url('img/teng.png') ?>" class="card-img-top" alt="...">
-
                             </div>
                             <div class="card-text">
                                 <p>
@@ -92,21 +91,21 @@
                 <div class="col">
                     <a href="https://www.youtube.com" style="text-decoration:none">
                         <div class="card" style="width: 18rem;">
-                            <div class="card-body3" >
+                            <div class="card-body3">
                                 <h5 class="card-title">Bootcamp</h5>
                                 <img src="<?= base_url('img/mentor.png') ?>" class="card-img-top" alt="...">
 
                             </div>
                             <div class="card-text">
                                 <p>
-                                    a
+                                    Develop your skill here
                                 </p>
                             </div>
                         </div>
                     </a>
                 </div>
             </div>
-            
+
         </div>
 
     </section>
@@ -123,7 +122,7 @@
                     <div class="card" style="width: 18rem;">
                         <div class="card-body">
                             <img src="<?= base_url('img/v1.png') ?>" class="img" alt="...">
-                            <h5 class="card-title center">Discuss</h5>
+                            <h5 class="card-title center">Begginer Friendly</h5>
                             <p>
                                 a
                             </p>
@@ -136,7 +135,7 @@
                     <div class="card" style="width: 18rem;">
                         <div class="card-body">
                             <img src="<?= base_url('img/v2.png') ?>" class="img" alt="...">
-                            <h5 class="card-title center">Discuss</h5>
+                            <h5 class="card-title center">Make it Smart Make it Know</h5>
                             <p>
                                 a
                             </p>
@@ -149,7 +148,7 @@
                     <div class="card" style="width: 18rem;">
                         <div class="card-body">
                             <img src="<?= base_url('img/v3.png') ?>" class="img" alt="...">
-                            <h5 class="card-title center">Discuss</h5>
+                            <h5 class="card-title center">Get Your new Insight Here</h5>
                             <p>
                                 a
                             </p>
@@ -165,7 +164,7 @@
 
     <!-- FOOTER: DEBUG INFO + COPYRIGHTS -->
     <footer>
-    <?= $this->include('Layout/footer') ?>
+        <?= $this->include('Layout/footer') ?>
     </footer>
 
 
