@@ -16,7 +16,7 @@ class Home extends BaseController
             $data = [
                 'title' => "Home"
             ];
-            echo view("welcome_message", $data);
+            echo view("home", $data);
         } else {
             $session = session();
             $namaPengguna = $session->get('id');
