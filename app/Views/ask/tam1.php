@@ -23,17 +23,18 @@
         </div>
         <div class="input-group mb-3 ">
             <div class="custom-select" style="width:200px;">
-                <select>
+                <select id="my-dropdown">
                     <option value="">Pilih Kategori:</option>
                     <option value="0">All</option>
-                    <option value="1">Java</option>
-                    <option value="2">Phyton</option>
+                    <option value="1">Microsoft Office</option>
+                    <option value="2">Codeigniter</option>
                     <option value="3">Laravel</option>
-                    <option value="4">Data Analis</option>
-                    <option value="5">Exel</option>
+                    <option value="4">Administrasi</option>
+                    <option value="5">Excel</option>
                     <option value="6">Matlab</option>
-                    <option value="4">Acounting</option>
-                    <option value="5">Administration</option>
+                    <option value="7">Acounting</option>
+                    <option value="8">Java</option>
+                    <option value="6">Data Analis</option>
                 </select>
                 <script src="<?= base_url('droplink.js') ?>"></script>
             </div>
@@ -49,32 +50,34 @@
         <section>
             <h1>It'Our Expert</h1>
             <div class="row">
-                <?php foreach ($isi as $key => $value):
+                <?php foreach ($isi as $row):
 
                     if ($x % 2 == 0) {
                         $color1 = '#' . $rand[0];
+                        $formattedAmount = number_format($row->AHLI_BIAYA, 2, ',', '.');
                         echo "<div class='col'>";
-                        echo "<a href='/ask/expert/" . $value['slug'] . "' style='text-decoration:none'>";
+                        echo "<a href='/ask/expert/" . $row->SLUG . "' style='text-decoration:none'>";
                         echo "<div class='card' style='width: 18rem;''>";
                         echo "<div class='card-body' style='background:" . $color1 . ";' >";
-                        echo "<img src=" . base_url("img/expert/" . $value['foto'] . ".png") . " class='card-img-top'>";
-                        echo "<h5 class='card-title'  style='color: black;'>" . $value['Nama'] . "</h5>";
-                        echo "<p  style='color: black;'>" . $value['skill'] . "</p>";
-                        echo "<h4  '>Rp. " . $value['biaya'] . "/sesi</h4>";
+                        echo "<img src=" . base_url("img/expert/" . $row->USER_IDFOTO) . " class='card-img-top'>";
+                        echo "<h5 class='card-title'  style='color: black;'>" . $row->USER_NAMA . "</h5>";
+                        echo "<p  style='color: black;'>" . $row->ahli_Skill . "</p>";
+                        echo "<h4  '>Rp. " . $formattedAmount . "/sesi</h4>";
                         echo "</div>";
                         echo "</div>";
                         echo "</a>";
                         echo "</div>";
                     } else {
                         $color1 = '#' . $rand[1];
+                        $formattedAmount = number_format($row->AHLI_BIAYA, 2, ',', '.');
                         echo "<div class='col'>";
-                        echo "<a href='/ask/expert/" . $value['slug'] . "' style='text-decoration:none'>";
+                        echo "<a href='/ask/expert/" . $row->SLUG . "' style='text-decoration:none'>";
                         echo "<div class='card' style='width: 18rem;''>";
                         echo "<div class='card-body' style='background:" . $color1 . ";' >";
-                        echo "<img src=" . base_url("img/expert/" . $value['foto'] . ".png") . " class='card-img-top'>";
-                        echo "<h5 class='card-title'  style='color: black;'>" . $value['Nama'] . "</h5>";
-                        echo "<p  '>" . $value['skill'] . "</p>";
-                        echo "<h4  '>Rp. " . $value['biaya'] . "/sesi</p>";
+                        echo "<img src=" . base_url("img/expert/" . $row->USER_IDFOTO) . " class='card-img-top'>";
+                        echo "<h5 class='card-title'  style='color: black;'>" . $row->USER_NAMA . "</h5>";
+                        echo "<p  style='color: black;'>" . $row->ahli_Skill . "</p>";
+                        echo "<h4  '>Rp. " . $formattedAmount . "/sesi</h4>";
                         echo "</div>";
                         echo "</div>";
                         echo "</a>";

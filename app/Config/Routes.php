@@ -34,10 +34,13 @@ $routes->get('/login', 'login::index');
 $routes->get('/create', 'login::index2');
 $routes->post('/create/add', 'login::add');
 $routes->get('/ask', 'ask::index');
+$routes->get('/ask/kategori/(:any)', 'ask::kat/$1');
 $routes->get('/ask/expert/(:any)', 'ask::index2/$1');
+$routes->get('/ask/bayar/(:any)', 'ask::index3/$1');
 $routes->post('/auth/login', 'login::login');
 $routes->get('/logout', 'login::logout');
 $routes->get('/profil', 'Home::profil');
+$routes->get('/coba', 'Home::coba');
 // $routes->get('/login', 'AuthController::login');
 
 

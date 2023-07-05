@@ -1,4 +1,8 @@
 var x, i, j, l, ll, selElmnt, a, b, c;
+
+function replaceSpacesWithUnderscore(string) {
+    return string.replace(/\s+/g, '_');
+}
 /* Look for any elements with the class "custom-select": */
 x = document.getElementsByClassName("custom-select");
 l = x.length;
@@ -27,6 +31,7 @@ for (i = 0; i < l; i++) {
             h = this.parentNode.previousSibling;
             for (i = 0; i < sl; i++) {
                 if (s.options[i].innerHTML == this.innerHTML) {
+
                     s.selectedIndex = i;
                     h.innerHTML = this.innerHTML;
                     y = this.parentNode.getElementsByClassName("same-as-selected");
@@ -34,7 +39,14 @@ for (i = 0; i < l; i++) {
                     for (k = 0; k < yl; k++) {
                         y[k].removeAttribute("class");
                     }
+                    var outputString = replaceSpacesWithUnderscore(s.options[i].innerHTML);
+                    if (s.options[i].innerHTML == "All") {
+                        window.location.href = "/ask";
+                    } else {
+                        window.location.href = "/ask/kategori/" + outputString;
+                    }
                     this.setAttribute("class", "same-as-selected");
+
                     break;
                 }
             }

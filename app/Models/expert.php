@@ -23,11 +23,33 @@ class expert extends Model
         return $builder->insert($data);
     }
     protected $primaryKey = 'id_Expert'; // Primary key tabel pengguna
-    protected $allowedFields = [ 'slug', 'Nama']; // Kolom yang dapat diisi pada tabel pengguna
+    protected $allowedFields = ['slug', 'Nama']; // Kolom yang dapat diisi pada tabel pengguna
 
-    public function getexpertslug($slug)
+    public function getslug($slug)
     {
-        return $this->where('slug', $slug)->first();
+        $query = $this->db->table('user')
+            ->select('*')
+            ->join('expert', 'user.ID_USER = expert.FK_ID_USER ' , 'inner')
+            ->where('expert.SLUG', $slug)
+            ->get();
+        return  $query->getResult();
     }
-    
+    public function joinexp()
+    {
+        $query = $this->db->table('user')
+            ->select('*')
+            ->join('expert', 'user.ID_USER = expert.FK_ID_USER', 'inner')
+            ->get();
+        return  $query->getResult();
+    }
+    public function joinexpkat($kat)
+    {
+        $query = $this->db->table('user')
+            ->select('*')
+            ->join('expert', 'user.ID_USER = expert.FK_ID_USER', 'inner')
+            ->like('expert.ahli_Skill', $kat)
+            ->get();
+        return  $query->getResult();
+    }
+
 }

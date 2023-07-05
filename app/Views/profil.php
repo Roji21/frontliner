@@ -20,50 +20,62 @@
         <div class="containerb">
             <div class="row">
                 <div class="col3">
-                    <img src="<?= base_url('img/defimg.png') ?>">
+                    <img src="<?= base_url('img/expert/' . $user['USER_IDFOTO']) ?>">
                 </div>
                 <div class="col">
                     <a href="" style="text-decoration:none"><button type="button" class="btn btn-primary">Join To
                             Expert</button></a>
-                    <a href="" style="text-decoration:none"><button type="button" class="btn btn-outline-light">Log out</button></a>
+                    <a href="/logout" style="text-decoration:none"><button type="button"
+                            class="btn btn-outline-light">Log out</button></a>
                 </div>
+                <h2>
+                    <?php echo $user['USER_NAMA'] ?>
+                </h2>
             </div>
         </div>
     </section>
     <div class="environmenta">
         <div class="row">
             <div style="margin-left: 5cm;" class="col-3">
-                <strong>Joined On</strong><br>
-                <p>23 Juni 2023</p>
+                <h4>Joined On</h4><br>
+                <h5>
+                    <?php echo $user['USER_JOIN'] ?>
+                </h5>
             </div>
             <div class="col-3">
-                <strong>Email</strong><br>
-                <p>dedik@gmail.com</p>
+                <h4>Email</h4><br>
+                <h5>
+                    <?php echo $user['USER_EMAIL'] ?>
+                </h5>
             </div>
             <div class="col-2">
-                <strong>No. Telp</strong><br>
-                <p>083134618300</p>
+                <h4>No. Telp</h4><br>
+                <h5>
+                    <?php echo $user['USER_TELP']; ?>
+                </h5>
             </div>
             <div class="col-2">
-                <a href="" style="text-decoration:none"><button type="button" class="btn btn-outline-light">Ubah Password</button></a><br>
+                <a href="" style="text-decoration:none"><button style="width: 4cm;
+    margin-top: 2mm;
+    margin-bottom: 2mm;" type="button" class="btn btn-outline-light">Ubah
+                        Password</button></a><br>
+                <a href="" style="text-decoration:none;"><button style="width: 4cm;
+    margin-top: 2mm;
+    margin-bottom: 2mm;" type="button" class="btn btn-outline-light">Ubah
+                        Profil </button></a><br>
             </div>
         </div>
+        <h1>Expert History</h1>
     </div>
-    <section>
-        <div class="box">
-            <div class="boxisi">
-                <div class="mb-3">
-                    <label for="exampleFormControlInput1" class="form-label">Email address</label>
-                    <input type="email" class="form-control" id="exampleFormControlInput1"
-                        placeholder="name@example.com">
-                </div>
-                <div class="mb-3">
-                    <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>
-                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-                </div>
-            </div>
-        </div>
-    </section>
+    <div class="container" style="padding-top: 2cm;padding-bottom: 2cm;">
+        
+    </div>
+    <div class="environmenta">
+        <h1 s>Bootcamp History</h1>
+    </div>
+    <div class="container" style="padding-top: 2cm;padding-bottom: 2cm;">
+        
+    </div>
 
     <!-- FOOTER: DEBUG INFO + COPYRIGHTS -->
     <footer>

@@ -49,5 +49,8 @@ class Home extends BaseController
             echo view("profil", $data);
         }
     }
+    public function coba(){
+        echo view("coba");
+    }
 
 }

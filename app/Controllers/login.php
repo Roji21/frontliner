@@ -14,7 +14,7 @@ class login extends BaseController
     {
         $session = session();
         if (!$session->has('id')) {
-            
+
             $data = [
                 'title' => 'Log In'
             ];
@@ -53,37 +53,37 @@ class login extends BaseController
     {
         $model = new user;
         $data = array(
-            'nama' => $this->request->getPost("nama"),
-            'email' => $this->request->getPost("email"),
-            'no_tel' => $this->request->getPost("note"),
-            'password' => $this->request->getPost("password"),
-            'jenis' => 2
+            'USER_NAMA' => $this->request->getPost("nama"),
+            'USER_EMAIL' => $this->request->getPost("email"),
+            'USER_TELP' => $this->request->getPost("note"),
+            'USER_PASS' => $this->request->getPost("password"),
+            'USER_IDFOTO' => 'defimg.png',
+            'USER_JOIN' => date("Y:m:d")
         );
         $model->saveuser($data);
-        echo '<script>
-                alert("Selamat! Berhasil Menambah Data ");
-                window.location="' . base_url('/') . '"
-            </script>';
+        return redirect()->to(base_url('/login'));
     }
     public function login()
     {
-        // $validationRules = [
-        //     'email' => 'required|valid_email',
-        //     'password' => 'required'
-        // ];
-
         $email = $this->request->getPost('email');
         $password = $this->request->getPost('password');
         $userModel = new user();
         $user = $userModel->getUserByEmail($email);
-        if ($user['email'] == $email && $user['password'] == $password) {
-            // Login berhasil, simpan informasi pengguna ke dalam session
-            $session = session();
-            $session->set('id', $user['id_user']);
-            return redirect()->to(base_url('/'));
+        if (is_null($user)) {
+            echo '<script>
+                alert("Email atau password salah.");
+                window.location.href = "/login";
+            </script>';
         } else {
-            $data['error'] = 'Email atau password salah.';
-            return redirect()->to(base_url('/login'));
+            if ($user['USER_EMAIL'] == $email && $user['USER_PASS'] == $password) {
+                // Login berhasil, simpan informasi pengguna ke dalam session
+                $session = session();
+                $session->set('id', $user['ID_USER']);
+                return redirect()->to(base_url('/'));
+            } else {
+                $data['error'] = 'Email atau password salah.';
+                return redirect()->to(base_url('/login'));
+            }
         }
     }
     public function logout()

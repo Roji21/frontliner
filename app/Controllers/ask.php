@@ -9,16 +9,17 @@ use CodeIgniter\Session\Session;
 class ask extends BaseController
 {
     protected $session;
-    public function index()
+    public function index($param = null)
     {
         $session = session();
         $expModel = new expert();
-        $isi = $expModel->getuser();
+        $isi = $expModel->joinexp();
         if (!$session->has('id')) {
             $data = [
                 'title' => 'Ask Expert',
                 'isi' => $isi
             ];
+
             echo view("ask/tam1", $data);
         } else {
             $session = session();
@@ -37,12 +38,11 @@ class ask extends BaseController
     {
         $session = session();
         $expModel = new expert();
-        $isi = $expModel->getexpertslug($expert);
+        $isi = $expModel->getslug($expert);
         if (!$session->has('id')) {
             $data = [
                 'title' => 'Ask Expert',
-                'isi' => $isi,
-                'laa' => $expert
+                'isi' => $isi
             ];
             echo view("ask/tam2", $data);
         } else {
@@ -52,11 +52,62 @@ class ask extends BaseController
             $user = $userModel->getUserById($namaPengguna);
             $data = [
                 'user' => $user,
-                'title' => 'Ask Expert',
+                'title' => "Ask Expert",
                 'isi' => $isi
             ];
+
             echo view("ask/tam2", $data);
         }
     }
+    public function index3($expert)
+    {
+        $session = session();
+        $expModel = new expert();
+        $isi = $expModel->getslug($expert);
+        if (!$session->has('id')) {
+            $data = [
+                'title' => 'Ask Expert',
+                'isi' => $isi
+            ];
+            echo view("ask/bayar", $data);
+        } else {
+            $session = session();
+            $namaPengguna = $session->get('id');
+            $userModel = new user();
+            $user = $userModel->getUserById($namaPengguna);
+            $data = [
+                'user' => $user,
+                'title' => "Ask Expert",
+                'isi' => $isi
+            ];
 
+            echo view("ask/bayar", $data);
+        }
+    }
+    public function kat($param)
+    {
+        $ket = str_replace('_', ' ', $param);
+        $session = session();
+        $expModel = new expert();
+        $isi = $expModel->joinexpkat($ket);
+        if (!$session->has('id')) {
+            $data = [
+                'title' => 'Ask Expert',
+                'isi' => $isi
+            ];
+
+            echo view("ask/tam1", $data);
+        } else {
+            $session = session();
+            $namaPengguna = $session->get('id');
+            $userModel = new user();
+            $user = $userModel->getUserById($namaPengguna);
+            $data = [
+                'user' => $user,
+                'title' => "Ask Expert",
+                'isi' => $isi
+            ];
+            echo view("ask/tam1", $data);
+        }
+    }
 }

@@ -15,7 +15,6 @@
             background-repeat: no-repeat;
             background-size: cover;
         }
-        
     </style>
     <title>
         <?= esc($title) ?>
@@ -23,23 +22,23 @@
 </head>
 
 <body>
-    <?= $this->include('layout/header') ?>
+    <?= $this->include('Layout/header') ?>
     <section>
         <div class="containerb mt-5">
             <div class="row d-flex justify-content-center">
                 <div class="col-md-6">
                     <div class="card px-5 py-5" id="form1">
                         <h5 class="card-title center">Sign In To Your Acount</h5>
-                        <form action="/auth/login" method="post">
+                        <form id="myForm" action="/auth/login" method="post">
                             <p>Email</p>
                             <div class="input-group mb-4 ">
                                 <input type="text" class="form-control border-warning  p-2" placeholder="Email"
-                                    aria-label="Email"name="email">
+                                    aria-label="Email" name="email" id="email" required>
                             </div>
                             <p>Password</p>
                             <div class="input-group mb-4 ">
                                 <input type="password" class="form-control border-warning  p-2" placeholder="Password"
-                                    aria-label="password"name="password">
+                                    aria-label="password" name="password" required>
                             </div>
                             <div class="mb-3"> <button v-on:click.stop.prevent="submit"
                                     class="btn btn-warning w-100">Login</button> </div>
@@ -56,6 +55,18 @@
                                 </div>
                             </div>
                         </form>
+                        <script>
+                            document.getElementById('myForm').addEventListener('submit', function (event) {
+                                var emailInput = document.getElementById('email');
+                                var email = emailInput.value;
+                                var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                                if (!emailRegex.test(email)) {
+                                    alert('Format email tidak valid');
+                                    emailInput.focus();
+                                    event.preventDefault(); // Mencegah form dikirim jika format email tidak valid
+                                }
+                            });
+                        </script>
                     </div>
                 </div>
             </div>

@@ -27,8 +27,8 @@
               echo '<li class="menu-item hidden">';
               echo '<a href="/profil">';
               echo '<div class="user">';
-              echo "<span>". $user['nama']."</span>";
-              echo "<img src=" . base_url("img/expert/". $user['foto'].".png") . ">";
+              echo "<span>". $user['USER_NAMA']."</span>";
+              echo "<img src=" . base_url("img/expert/". $user['USER_IDFOTO']) . ">";
               echo '</div>';
               echo '</a>';
               echo '</li>';
